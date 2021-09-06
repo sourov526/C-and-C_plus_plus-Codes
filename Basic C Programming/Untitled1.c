@@ -1,42 +1,20 @@
 #include<stdio.h>
-int main()
+void main()
 {
-    int salary ;
-
-    printf("Enter The Amount ? \n");
-    scanf("%d", &salary);
-
-    //Coded By Risfat
-//here im using nested if else statement and && logical oparators
-
-    if (salary>=100000)
+    int n,i,fact,j;
+    printf("Enter the Number");
+    scanf("%d",&n);
+    printf("Prime Numbers are: \n");
+    for(i=1; i<=n; i++)
     {
-        printf("Executive Manager");
-
-    }
-    else
-        if (salary>=50000 && salary<100000)
-    {
-        printf("Manager");
-    }
-    else
-        if (salary>=30000 && salary<50000)
+        fact=0;
+        for(j=1; j<=n; j++)
         {
-        printf("Officer Grade 1");
-    }
-    else
-        if (salary>=20000 && salary<300000)
-        {
-        printf("Officer Grade 2");
-    }
-    else
-        if (salary>=10000 && salary<20000)
-        {
-        printf("Staff");
-
+            if(i%j==0)
+                fact++;
         }
-
-return 0;
-
+        if(fact==2)
+            printf("%d " ,i);
+    }
+    getch();
 }
-
