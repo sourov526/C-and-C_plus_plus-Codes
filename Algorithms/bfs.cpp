@@ -52,12 +52,14 @@ int main()
     q.push(s);
     level[s] = 0;
     vis[s] = true;
-    printf("\nResult : ");
+    int res[N+1];
+    int k=0;
     while(!q.empty())
     {
         int p = q.front();
-        printf("%d ",p);
         q.pop();
+        res[k] = p;
+        k++;
         for(int i = 0; i<N+1; i++)
         {
             if(Adj[p][i] == 1 && vis[i]==false)
@@ -70,7 +72,12 @@ int main()
 
         }
     }
-    printf("\n\n");
+    printf("\n\nLevel :\n");
     for(int i = 0; i<N+1;i++)printf("%d %d\n",i,level[i]);
+
+    printf("\nResult : \n");
+    for(int i = 0; i<N;i++)printf("%d\n",res[i]);
+
+    return 0;
 
 }
