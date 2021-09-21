@@ -14,8 +14,6 @@ int main(){
     t->pt = NULL;
     printf("\n%d\n\n", t->data);
     printf("\n%p\n\n", t->pt);
-
-
-    getch();
+    //---
 
 }
