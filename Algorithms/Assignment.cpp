@@ -53,9 +53,13 @@ int main()
     level[s] = 0;
     vis[s] = true;
     printf("\nResult : ");
+    int res[N+1];
+    int k=0;
     while(!q.empty())
     {
         int p = q.front();
+        res[k] = p;
+        k++;
         printf("%d ",p);
         q.pop();
         for(int i = 0; i<N+1; i++)
@@ -67,10 +71,23 @@ int main()
                 q.push(i);
                 vis[i] = true;
             }
+             else if(Adj[p][i] == 1)
+             {
+                 for(int a=0; a<N+1; a++)
+                 {
+                     if (res[a] == i)
+                     {
+                          printf("cycle");
+                     }
+                 }
+
+             }
 
         }
     }
     printf("\n\n");
     for(int i = 0; i<N+1;i++)printf("%d %d\n",i,level[i]);
+    for(int i = 0; i<N+1;i++)printf("%d\n",res[i]);
 
 }
+

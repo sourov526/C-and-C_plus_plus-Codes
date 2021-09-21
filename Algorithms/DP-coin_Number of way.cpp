@@ -27,4 +27,5 @@ int main()
         }
         printf("\n");
     }
+    printf("Number of way to coin change : %d",table[n][amt]);
 }
