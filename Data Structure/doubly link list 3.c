@@ -9,8 +9,7 @@ struct node
 
 void insertBefore(struct node** head_ref, struct node* next_node, int new_data)
 {
-    if (next_node == NULL)
-    {
+    if (next_node == NULL) {
         printf("the given next node cannot be NULL");
         return;
     }
@@ -42,8 +41,7 @@ void insertEnd(struct node** head_ref, int new_data)
 
     new_node->next = NULL;
 
-if (*head_ref == NULL)
-    {
+    if (*head_ref == NULL) {
         new_node->prev = NULL;
         *head_ref = new_node;
         return;
@@ -65,7 +63,6 @@ void printlist(struct node* n)
         printf("%d ",n->data);
         n = n->next;
     }
-    printf("\n");
 }
 int main()
 {
@@ -83,10 +80,8 @@ int main()
     second -> data = 40;
     second->prev = first;
     second -> next = NULL;
-    printlist(head);
 
     insertBefore(&head, head, 8);
-    printlist(head);
     insertEnd(&head, 4);
     printlist(head);
     return 0;
